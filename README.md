@@ -67,5 +67,5 @@ dotnet test
 ```
 
 ## Considerações 
-Por se tratar de uma solução simples sem persistências de dados e com poucas entidades optei por não definir uma arquitetura, mas sim design simples com Controllers, Services, Interfaces e Models.
+Por se tratar de uma solução simples sem persistências de dados e com poucas entidades optei por não definir uma arquitetura, mas sim um design simples com Controllers, Services, Interfaces e Models.
 
