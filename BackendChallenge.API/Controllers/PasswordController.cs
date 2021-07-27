@@ -1,4 +1,4 @@
-﻿using BackendChallenge.API.Models;
+﻿using BackendChallenge.API.Models.InputModels;
 using BackendChallenge.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,22 +7,22 @@ namespace BackendChallenge.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class PasswordController : ControllerBase
     {
         private readonly IPasswordService _passwordService;
-        
-        public UserController(IPasswordService passwordService)
+
+        public PasswordController(IPasswordService passwordService)
         {
             _passwordService = passwordService;
         }
 
-        [HttpPost]
-        public IActionResult IsValidPassword([FromBody] UserInputModel user)
+        [HttpPost("validate")]
+        public IActionResult ValidatePassword([FromBody] PasswordInputModel user)
         {
             try
             {
-                bool result = _passwordService.IsValidPassword(user.Password); 
-                return result ? Ok() : BadRequest("Senha inválida");
+                bool isPasswordValid = _passwordService.IsValidPassword(user.Password); 
+                return isPasswordValid ? Ok(isPasswordValid) : BadRequest(isPasswordValid);
             }
             catch(Exception ex)
             { 

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BackendChallenge.API.Models
+namespace BackendChallenge.API.Models.InputModels
 {
-    public class UserInputModel
+    public class PasswordInputModel
     {
         [Required]
         public string Password { get; set; }

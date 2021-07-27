@@ -7,22 +7,14 @@ namespace BackendChallenge.API.Services
     {
         public bool IsValidPassword(string password)
         {
-
-            if (
-                HasMinLength(password) 
+            return
+                HasMinLength(password)
                 && !HasWhiteSpace(password)
                 && !HasDuplicatedChar(password)
                 && HasUpperCase(password)
                 && HasLowerCase(password)
                 && HasNumber(password)
-                && HasSpecialChar(password)
-                )
-            {
-                return true;
-            }
-
-            return false;
-
+                && HasSpecialChar(password);
         }
 
         public bool HasMinLength(string password)
