@@ -1,6 +1,9 @@
-# Introdução 
-
-<b>Projeto desenvolvido para desafio de backend. Foi utilizado [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0) </b>
+# Introdução
+Projeto desenvolvido para um desafio de backend.
+### :rocket: Tecnologias:
+- [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0)
+- [Swashbuckle](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio)
+- [xUnit.net](https://xunit.net/)
 
 
 ## Problema
@@ -28,16 +31,17 @@ IsValid("AbTp9 fok") // false
 IsValid("AbTp9!fok") // true
 ```
 ## Como executar:
-Execute os comandos abaixo e acesse a documentação [Swagger](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0) no navegador.
+Execute os comandos abaixo e acesse https://localhost:5001/swagger
 
 <b>CLI</b>
-```cli
+
+```bash
 dotnet build 
 dotnet run --project BackendChallenge.API
 ```
+![Image of Swagger](https://user-images.githubusercontent.com/48356414/127195227-ff31332f-50bc-4182-a09b-925abe1337ec.png)
 > Acesso para a documentação swagger: "https://localhost:5001/swagger"
 
-![Image of Swagger](https://user-images.githubusercontent.com/48356414/127195227-ff31332f-50bc-4182-a09b-925abe1337ec.png)
 ## Testes:
 Para cada requisito de validação foi feito um teste e consequentemente um método. Escolhi manter cada uma das tentativas de teste para simular o cenário de exemplo, então quando os testes forem executados você verá este cenário: 
 
@@ -53,19 +57,17 @@ IsValid("AbTp9 fok") // false
 IsValid("AbTp9!fok") // true
 ``` 
 
-```cli
-"Com falha! - Com falha:     7, Aprovado:     8, Ignorado:     0, Total:    15, Duração: 43 ms - BackendChallenge.UnitTests.dll (net5.0)"
+```bash
+Com falha! - Com falha:     7, Aprovado:     8, Ignorado:     0, Total:    15, Duração: 43 ms - BackendChallenge.UnitTests.dll (net5.0)
 ```
 *CLI*
 
 ### Como executar os Testes:
 <b>CLI</b>
-```cli
-dotnet build // caso não tenha feito o build ainda
+
+```bash
 dotnet test
-
 ```
-
 ## Considerações 
-Por se tratar de uma solução simples sem persistências de dados e com poucas entidades optei por não definir uma arquitetura, mas sim um design simples com Controllers, Services, Interfaces e Models.
+Por se tratar de uma solução sem persistência de dados e com poucas entidades optei por não definir uma arquitetura, mas sim um design simples com Controllers, Services, Interfaces e Models.
 
