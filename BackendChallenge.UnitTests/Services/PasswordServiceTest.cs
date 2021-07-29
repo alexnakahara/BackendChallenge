@@ -30,7 +30,7 @@ namespace BackendChallenge.UnitTests
 
         [Theory]
         [InlineData("123456789")]
-        public void HasMinLength_AtLeastLength9_ReturnTrue(string password)
+        public void HasMinLength_HasAtLeastLength9_ReturnTrue(string password)
         {
             PasswordService authorizeService = new PasswordService();
             bool result = authorizeService.HasMinLength(password);
@@ -40,7 +40,7 @@ namespace BackendChallenge.UnitTests
 
         [Theory]
         [InlineData("AlexanderNakahara")]
-        public void HasWhiteSpace_StringWithoutWhiteSpace_ReturnFalse(string password)
+        public void HasWhiteSpace_StringHasWhiteSpace_ReturnFalse(string password)
         {
             PasswordService authorizeService = new PasswordService();
             bool result = authorizeService.HasWhiteSpace(password);
@@ -49,8 +49,18 @@ namespace BackendChallenge.UnitTests
         }
 
         [Theory]
+        [InlineData("alex")]
+        public void HasDuplicatedChar_StringHasDuplicatedChar_ReturnFalse(string password)
+        {
+            PasswordService authorizeService = new PasswordService();
+            bool result = authorizeService.HasDuplicatedChar(password);
+
+            Assert.False(result, $"Password: {password} can't duplicate characters");
+        }
+
+        [Theory]
         [InlineData("alexanderNakahara")]
-        public void HasUpperCase_StringHasSomeCharUpperCase_ReturnTrue(string password)
+        public void HasUpperCase_HasSomeCharUpperCase_ReturnTrue(string password)
         {
             PasswordService authorizeService = new PasswordService();
             bool result = authorizeService.HasUpperCase(password);
@@ -60,7 +70,7 @@ namespace BackendChallenge.UnitTests
 
         [Theory]
         [InlineData("ALEXANDERcAAAAA")]
-        public void HasLowerCase_StringHasSomeCharLowerCase_ReturnTrue(string password)
+        public void HasLowerCase_HasSomeCharLowerCase_ReturnTrue(string password)
         {
             PasswordService authorizeService = new PasswordService();
             bool result = authorizeService.HasLowerCase(password);
@@ -70,7 +80,7 @@ namespace BackendChallenge.UnitTests
 
         [Theory]
         [InlineData("alex1naka")]
-        public void HasNumberCase_StringHasSomeNumber_ReturnTrue(string password)
+        public void HasNumberCase_HasSomeNumber_ReturnTrue(string password)
         {
             PasswordService authorizeService = new PasswordService();
             bool result = authorizeService.HasNumber(password);
@@ -80,22 +90,12 @@ namespace BackendChallenge.UnitTests
 
         [Theory]
         [InlineData("@lex^&")]
-        public void HasSpecialChar_StringHasSomeSpecialChar_ReturnTrue(string password)
+        public void HasSpecialChar_HasSomeSpecialChar_ReturnTrue(string password)
         {
             PasswordService authorizeService = new PasswordService();
             bool result = authorizeService.HasSpecialChar(password);
 
             Assert.True(result, $"Password: {password} must have some special character: '!@#$%^&*()-+' ");
-        }
-
-        [Theory]
-        [InlineData("alex")]
-        public void HasDuplicatedChar_WhenHasDuplicatedChar_ReturnFalse(string password)
-        {
-            PasswordService authorizeService = new PasswordService();
-            bool result = authorizeService.HasDuplicatedChar(password);
-
-            Assert.False(result, $"Password: {password} can't duplicate characters");
         }
 
     }

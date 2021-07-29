@@ -35,7 +35,7 @@ Execute os comandos abaixo e acesse https://localhost:5001/swagger
 
 <b>CLI</b>
 
-```bash
+```CLI
 dotnet build 
 dotnet run --project BackendChallenge.API
 ```
@@ -57,7 +57,7 @@ IsValid("AbTp9 fok") // false
 IsValid("AbTp9!fok") // true
 ``` 
 
-```bash
+```CLI
 Com falha! - Com falha:     7, Aprovado:     8, Ignorado:     0, Total:    15, Duração: 43 ms - BackendChallenge.UnitTests.dll (net5.0)
 ```
 *CLI*
@@ -65,9 +65,6 @@ Com falha! - Com falha:     7, Aprovado:     8, Ignorado:     0, Total:    15, D
 ### Como executar os Testes:
 <b>CLI</b>
 
-```bash
+```CLI
 dotnet test
 ```
-## Considerações 
-Por se tratar de uma solução sem persistência de dados e com poucas entidades optei por não definir uma arquitetura, mas sim um design simples com Controllers, Services, Interfaces e Models.
-
