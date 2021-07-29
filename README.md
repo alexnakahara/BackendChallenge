@@ -2,7 +2,7 @@
 Projeto desenvolvido para um desafio de backend.
 ### :rocket: Tecnologias:
 - [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0)
-- [Swashbuckle](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio)
+- [Swashbuckle](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0)
 - [xUnit.net](https://xunit.net/)
 
 
